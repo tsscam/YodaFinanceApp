@@ -160,10 +160,13 @@ body{
 }
 
 .text{
-	padding: 0px 0px 15px 0px;
+	padding: 20px 0px 15px 0px;
 }
 
-.img_l {	float:left;
+.img_l {	
+    height: 120px;
+
+    float:left;
 		margin: 5px 22px 3px 0px;
 }
 
@@ -174,21 +177,21 @@ body{
 
  h1{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size:14px;
+	font-size:20px;
 	font-weight: 100;
 	color: #000000;
 	text-align: left;
-	padding: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 00px;
 	line-height:normal;
 }
 
 .read {
-	font-size:12px;
+	font-size:30px;
 	color: #FF0000;
 	text-decoration: none;
 	display:block;
 	line-height: 17px;
-	width: 66px;
+	width: 86px;
 	text-align: center;
 	float: right;
 	font-weight:bold;
@@ -197,37 +200,37 @@ body{
 }
 
 .read:hover {
-	font-size:12px;
+	font-size:20px;
 	text-decoration: underline;
 }
 
 .box_more {
 	background:url(images/box_more.png) left top no-repeat;
 	height:	111px;
-	padding: 0px 15px 0px 15px;
+	padding: 20px 15px 10px 15px;
 
 	}
 .box_more_l {   float:left;
-                margin-right:50px;
-				width: 780px;
+                margin-right:20px;
+				width: 680px;
 				padding-top: 15px;
 				color: #000000;
-				font-size: 18px;
+				font-size: 25px;
 				line-height: 25px;
 				}
 				
 .box_more_r {   float:right;  
-                margin-left:50px;            
+                margin-left:80px;            
 				width: 155px;
-				padding-top: 20px;
+				padding-top: 15px;
 				}
 .but_more {
 	width: 156px;
 	height: 30px;
-	padding-top: 13px;
+	padding-top: 20px;
 	background: url(images/but_more.gif) left top no-repeat;
 	display:block;
-	font-size:18px;
+	font-size:28px;
 	color:#FFFFFF;
 	text-align:right;
 	text-decoration: none;
@@ -239,7 +242,7 @@ body{
 
 	
 #bottom {
-	background: url(images/bottom.png) 43px 30px no-repeat;
+	background: url(images/bottom.png) 43px 45px no-repeat;
 	color: #FFFFFF;
 }
 
@@ -250,26 +253,29 @@ body{
 
 #bottom h1 { 
 	color: #ffffff;
-	font-size: 14px;
+	font-size: 20px;
 	font-weight: 100;
 	text-align: center;
-	padding: 5px 0px 5px 0px;
+	padding: 10px 0px 5px 0px;
 			}
 
 #b_col1 {
+   
 	width: 253px;
 	float: left;
-	margin-left: 43px;
+	margin-left: 20px;
 }
 #b_col2 {
+   
 	width: 253px;
 	float: left;
-	margin-left: 85px;
+	margin-left: 60px;
 }
 #b_col3 {
+  
 	width: 253px;
 	float: left;
-	margin-left: 85px;
+	margin-left: 60px;
 	text-align: left;
 }
 
@@ -309,16 +315,16 @@ float: left;}
 	}
 	
 .fu_i {
-	padding: 0px 14px 0px 0px;
+	padding: 10px 14px 0px 0px;
 	vertical-align: middle ;
 }
 
 #b_col3 ul {
 	list-style:none;
-	padding: 0px 0px 0px 52px;}
+	padding: 0px 10px 0px 52px;}
 
 #b_col3 li {
-	padding: 8px 0px 2px 0px;
+	padding: 10px 0px 2px 0px;
 	background: none;
 	}
 	
@@ -376,7 +382,7 @@ float: left;}
 	position:relative;
     width: 954px;
     height: 378px;
-	background:url('images/Yoda Money.jpg') no-repeat 50% 50%;
+	background:url() no-repeat 50% 50%;
 }
 #slider img {
 	position:absolute;

@@ -6,7 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-
+using YodaProject.Models;
+using Microsoft.AspNet.Identity;
 namespace YodaProject.Controllers
 {
     public class HomeController : Controller
@@ -15,6 +16,17 @@ namespace YodaProject.Controllers
         {
             ViewBag.RandomQuote = GetRandomQuote();
 
+            return View();
+        }
+
+
+        public ActionResult SurveyView()
+        {
+            return View();
+        }
+        public ActionResult SurveyResult()
+        {
+           
             return View();
         }
 
@@ -54,6 +66,82 @@ namespace YodaProject.Controllers
             return RandomQuote["quote"].ToString();
 
         }
+        public ActionResult Survey(string Question1, string Question2, string Question3, string Question4)
+        {
+            YodaUserDBEntities DB = new YodaUserDBEntities();
+            string input1 = Question1.Substring(0, 2);
+            string input2 = Question2.Remove(0, 1);
+            string input3 = Question3.Remove(0, 1);
+            string input4 = Question4.Substring(0, 2);
+
+
+            // call a method 
+            ViewBag.Message = GetMessage(input1, input2, input3, input4);
+            // ViewBag.....
+
+
+            SurveyTable Temp = new SurveyTable();
+
+            Temp.UserID = User.Identity.GetUserId();
+
+            Temp.Question1 = input1;
+            Temp.Question2 = input2;
+            Temp.Question3 = input3;
+            Temp.Question4 = input4;
+
+            DB.SurveyTables.Add(Temp);
+            DB.SaveChanges();
+
+            return View("Index");
+        }
+
+        public string GetMessage(string input1, string input2, string input3, string input4)
+        {
+
+            int value1 = Convert.ToInt32(input1);
+            int value2 = Convert.ToInt32(input2);
+            int value3 = Convert.ToInt32(input3);
+            int value4 = Convert.ToInt32(input4);
+
+            if (value1 != 40)
+            {
+                return ("Unfortunantly, paying $20 (4%) of the $500 balance, is the minimum payment and will take 40 months.");
+            }
+            else
+            {
+                return ("Correct.Owing $500 will take 40 months, if you only pay $20 a month. Total payments = $ 634.25.");
+            }
+            if (value2 != 100)
+            {
+                return ("Saving $100 a month, would be a great goal to get you on your way to having over $10,000. According to Fidelity.Com if you are only Short - Term saving 5 % is acceptable, but 15 % should be saved towards retirement.Keep in mind. By age 30, $50,000 in savings is optimal.By age 35, Twice your annual salary should be saved. By age 40, Three times your annual salary should be saved. By age 45, Four times your annual salary should be saved.");
+            }
+            else
+            {
+                return ("Earning $10 an hour while working 30 hrs a week, you will be bringing home about $1000 a month. Always save a minimum of 10 % of your earnings.");
+            }
+            if (value3 == 50)
+            {
+                return ("$50 would only cover Maintenence or possibly Registration, fees and taxes for your car, on average.What about gas & insurance?");
+            }
+            else if (value3 == 200 || value3 == 300)
+            {
+               return ("Close! As average costs of insurance are $80 -$200 a month, with $100 approximately for maintenance, registration, fees and tases.What about gas ?");
+            } 
+                if (value3 == 500)
+            {
+                return ("Correct.It is advised to budget for for $500 a month. AAA estimates maintenance costs at around 4 cents per mile driven, which is about $622 a year if you’re driving 15,000 miles.This means your budget should set aside $50 - 60 / month for maintenance. Insurance your Budget should include $80 - 200 / month. Registration, fees, taxes budget should be $40 / month. Fuel Budget $100 - 250 / month.");
+            }
+            if (value4 == 20 || value4 == 30)
+            {
+                return ("According to the Bureau of Labor Statistics, the mean wage for 20 - to 24 - year - olds across all education levels in the third quarter of 2016 was $625 a week, or $32, 500 a year.");
+            }
+            if (value4 == 35 || value4 == 45)
+            {
+                return ("It's never to start saving and/or spending within your budget. For 25 - to 34 - year - olds, it was $966 a week, or $50,232 a year. The average salary for a recent college graduate with a bachelor’s degree was $50, 219 a year in 2015, according to the National Association of Colleges and Employers.");
+            }
+            ViewBag.Message = (value1 + value2 + value3 + value4);
+        }
+        
     }
 }
         //public ActionResult Register()
@@ -69,35 +157,7 @@ namespace YodaProject.Controllers
         //    return View(NewUser);//pass this NewUser model to the AddUser View     
 
         //}
-        //public ActionResult Admin()
-        //{
-        //    ViewBag.Message = "Administration";
-
-        //     YodaUserDB DB = new YodaUserDB();
-
-        //    //select * from customers
-        //    List<Item> ItemList = DB.Items.ToList();
-
-        //    ViewBag.ItemList = ItemList;
-
-        //    return View();
-        //}
-
-        //public ActionResult Add()
-        //{
-        //    return View();
-        //}
-
-    //    public ActionResult AddNewItem(Item NewItem)
-    //    {
-    //        YodaUserDB DB = new YodaUserDB();
-
-    //        DB.Items.Add(NewItem);
-
-    //        DB.SaveChanges();
-
-    //        return RedirectToAction("Admin");
-    //    }
+        
 
     //    public ActionResult Delete(string Name)
     //    {
@@ -134,23 +194,6 @@ namespace YodaProject.Controllers
     //    }
 
 
-    //    public ActionResult SaveUpdates(Item ToBeUpdated)
-    //    {
-    //        YodaUserDB DB = new YodaUserDB();
-    //        //find the original customer record
-    //        Item ToFind = DB.Items.Find(ToBeUpdated.Name);
-
-    //        ToFind.Name = ToBeUpdated.Name;
-
-    //        ToFind.Description = ToBeUpdated.Description;
-
-    //        ToFind.Quantity = ToBeUpdated.Quantity;
-
-    //        ToFind.Price = ToBeUpdated.Price;
-
-    //        DB.SaveChanges();
-    //        return RedirectToAction("Admin");
-    
-    //    }
+    //    
     //}
 //}

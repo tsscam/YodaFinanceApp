@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="YodaUserDBModelStoreContainer" CdmEntityContainer="YodaUserDBEntities">
+    <EntitySetMapping Name="SurveyTables">
+      <EntityTypeMapping TypeName="YodaUserDBModel.SurveyTable">
+        <MappingFragment StoreEntitySet="SurveyTable">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Question1" ColumnName="Question1" />
+          <ScalarProperty Name="Question2" ColumnName="Question2" />
+          <ScalarProperty Name="Question3" ColumnName="Question3" />
+          <ScalarProperty Name="Question4" ColumnName="Question4" />
+          <ScalarProperty Name="SubmissionID" ColumnName="SubmissionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
