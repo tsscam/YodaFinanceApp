@@ -10,6 +10,7 @@
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>
     <hr />
+    //Razor code used to obtain NEW USERS Email which is used by the Account Register Controller
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
@@ -17,19 +18,21 @@
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
     </div>
-
+    //Razor code used to obtain New User First Name
     <div class="form-group">
         @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
         </div>
     </div>
+    //razor code used to obtain new user Last Name
     <div class="form-group">
         @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
         </div>
     </div>
+    //razor code used to obtain new user Age 
     <div class="form-group">
         @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

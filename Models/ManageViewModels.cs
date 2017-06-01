@@ -5,6 +5,9 @@ using Microsoft.Owin.Security;
 
 namespace YodaProject.Models
 {
+    //The class is the blueprint for the object being created or instances. The classes access level determines how memory manages the instance and the scope to which the object can be available or used. Objects or instances within classes are referred to by reference and are called upon to evoke object. 
+
+
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }

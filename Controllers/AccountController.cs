@@ -70,7 +70,7 @@ namespace YodaProject.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View();
             }
 
             // This doesn't count login failures towards account lockout

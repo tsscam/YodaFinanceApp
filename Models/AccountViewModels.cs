@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace YodaProject.Models
 {
+    //constructors used to obtain information from constructor and send to the view
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
@@ -61,6 +62,10 @@ namespace YodaProject.Models
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }
+    //A constructor is a method whose name is the same as the name.
+
+    //Method that is called to initialize the objects properties.
+
 
     public class RegisterViewModel
     {
