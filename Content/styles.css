@@ -79,11 +79,11 @@ body{
 	font-size: 20px;
 	font-weight: 100;
 	display: block;
-	float: left;
+	float: right;
 	text-decoration: none;
 	color: #DDDDDD;
 	text-align: right;
-	padding-top: 32px;
+	padding-top: 100px;
 	height: 50px;
 	
 }
@@ -263,7 +263,7 @@ body{
    
 	width: 253px;
 	float: left;
-	margin-left: 20px;
+	margin-left: 60px;
 }
 #b_col2 {
    
